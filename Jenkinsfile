@@ -1,13 +1,13 @@
 pipeline {
   agent any
-  options {
-    buildDiscarder(logRotator(numToKeepStr: '5'))
+  environment {
+    scannerHome = tool name: 'sonar-scanner'
   }
   stages {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'mySonar') { 
-          sh 'sonar-scanner'
+          sh '${scannerHome/bin/sonar-scanner --version'
         }
       }
     }
