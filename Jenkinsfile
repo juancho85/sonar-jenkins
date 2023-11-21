@@ -1,6 +1,8 @@
 pipeline {
   agent any
   tools {
+    // Usamos la instalción de node que hemos definido antes
+    // Esto además va a hacer que "node" esté en el PATH
     nodejs 'node20'
   }
   environment {
