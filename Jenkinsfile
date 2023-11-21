@@ -5,14 +5,12 @@ pipeline {
   }
   environment {
     scannerHome = tool name: 'sonar-scanner'
-    PATH="${scannerHome}/bin/sonar-scanner:${env.PATH}"
   }
   stages {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'mySonar') { 
-          //sh '${scannerHome}/bin/sonar-scanner'
-          sh 'sonar-scanner'
+          sh '${scannerHome}/bin/sonar-scanner'
         }
       }
     }
