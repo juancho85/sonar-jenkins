@@ -70,6 +70,15 @@ async function main() {
   try {
     // Replace 'your-filter' with your desired filter
     const filter = 'test';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
+    filter = 'violation';
 
     // Get a list of projects based on the filter
     const projects = await getProjects(filter);
