@@ -4,17 +4,17 @@ pipeline {
     nodejs 'node20'
     'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner'
   }
-  /*environment {
-    NODEJS_HOME = tool name: 'node20'
+  environment {
     scannerHome = tool name: 'sonar-scanner'
-    PATH="${NODEJS_HOME}/bin:${scannerHome}/bin/sonar-scanner:${env.PATH}"
-  }*/
+    PATH="${scannerHome}/bin/sonar-scanner:${env.PATH}"
+  }
   stages {
     stage('Check tools versions') {
       steps {
-        sh "echo ${PATH}"
-        sh 'sonar-scanner --version'
         sh 'node --version'
+        sh "echo ${PATH}"
+        sh '${scannerHome}/bin/sonar-scanner'
+        sh 'sonar-scanner --version'
       }
     }
     stage('Scan') {
