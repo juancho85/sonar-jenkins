@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools {
     node: 'node20'
-    sonar-scanner: 'sonar-scanner'
+    sonar: 'sonar-scanner'
   }
   /*environment {
     NODEJS_HOME = tool name: 'node20'
