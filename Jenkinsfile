@@ -1,10 +1,14 @@
 pipeline {
   agent any
-  environment {
+  tools {
+    node: 'node20'
+    sonar-scanner: 'sonar-scanner'
+  }
+  /*environment {
     NODEJS_HOME = tool name: 'node20'
     scannerHome = tool name: 'sonar-scanner'
     PATH="${NODEJS_HOME}/bin:${scannerHome}/bin/sonar-scanner:${env.PATH}"
-  }
+  }*/
   stages {
     stage('Check tools versions') {
       steps {
