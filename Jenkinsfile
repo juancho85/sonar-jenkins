@@ -2,7 +2,7 @@ pipeline {
   agent any
   tools {
     nodejs 'node20'
-    hudson.plugins.sonar.SonarRunnerInstallation 'sonar-scanner'
+    'hudson.plugins.sonar.SonarRunnerInstallation' 'sonar-scanner'
   }
   /*environment {
     NODEJS_HOME = tool name: 'node20'
