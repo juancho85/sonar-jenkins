@@ -7,7 +7,7 @@ pipeline {
     stage('Scan') {
       steps {
         withSonarQubeEnv(installationName: 'mySonar') { 
-          sh '${scannerHome/bin/sonar-scanner --version'
+          sh '${scannerHome}/bin/sonar-scanner --version'
         }
       }
     }
